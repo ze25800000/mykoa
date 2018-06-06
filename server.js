@@ -1,9 +1,8 @@
 const myKoa = require('./application')
 const app = new myKoa()
 
-app.use((req, res) => {
-    res.writeHead(200)
-    res.end('hello world')
+app.use(async ctx => {
+    ctx.body = 'hello yangze' + ctx.url
 })
 
 app.listen(9001, () => {
