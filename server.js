@@ -1,11 +1,11 @@
-const http = require('http')
+const myKoa = require('./application')
+const app = new myKoa()
 
-const server = http.createServer((req, res) => {
+app.use((req, res) => {
     res.writeHead(200)
-    res.end('hello yangze')
+    res.end('hello world')
 })
 
-const port = 9001
-server.listen(port, () => {
-    console.log(`server start on port ${port}`)
+app.listen(9001, () => {
+    console.log('server run on port 9001')
 })
